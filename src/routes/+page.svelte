@@ -11,8 +11,11 @@
 <div class="container text-center mt-5 d-flex flex-column">
     <h1>Поздравление для Даниила Мысливца</h1>
     <div class="alert alert-warning d-flex align-items-center" role="alert">
-        <i class="bi bi-exclamation-triangle-fill me-2"></i> 
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+        <div>
         Всё что вы введёте на данном сайте пройдёт модерацию и будет опубликовано публично!
+        <b>Внимание! Можно отправить только одно поздравление с одного IP-адреса, отключите VPN.</b>
+        </div>
       </div>
     <div class="main-box mb-3">
         <form method="POST" action="/?/post">
@@ -35,9 +38,9 @@
                 </div>
             </div>
             {#if name.length <= 25 && congratulation.length <= 1024 && congratulation && name}
-            <button type="submit" class="btn btn-outline-success mb-3">Отправить</button>
+            <button type="submit" class="btn btn-outline-success my-3">Отправить</button>
             {:else}
-            <button type="submit" class="btn btn-outline-success mb-3" disabled>Отправить</button>
+            <button type="submit" class="btn btn-outline-success my-3" disabled>Отправить</button>
             {/if}
             
         </form>

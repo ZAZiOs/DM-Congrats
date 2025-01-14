@@ -1,5 +1,5 @@
 import { PostDB } from '$lib/db/posts.js'
-import { error } from '@sveltejs/kit';
+import { error, redirect } from '@sveltejs/kit';
 
 export const actions = {
 	post: async ({ cookies, request, getClientAddress }) => {
@@ -16,13 +16,15 @@ export const actions = {
                 ip, congrats, color1, color2, name,
                 date: new Date(),
             })
+            return redirect(302, '/done')
         } else {
             old_post.congrats = congrats
             old_post.color1 = color1
             old_post.color2 = color2
             old_post.name = name
             old_post.date = new Date()
-            old_post.save()
+            await old_post.save()
+            return redirect(302, '/done')
         }
     }
 };
