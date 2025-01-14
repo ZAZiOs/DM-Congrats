@@ -32,7 +32,7 @@ export const actions = {
 export const load = async ({ getClientAddress }) => {
     let ip = getClientAddress()
     const old_post = await PostDB.findOne({ip}).lean()
-    let posts = await PostDB.find({}, {_id: 0}).lean()
+    let posts = await PostDB.find({visible: true}, {_id: 0}).lean()
     if (!old_post) return { old_post: {none: true}, posts}
     old_post._id = String(old_post._id)
     return {

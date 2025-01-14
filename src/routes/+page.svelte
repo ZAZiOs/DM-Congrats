@@ -9,7 +9,7 @@
 <div class="container-main">
     {#if !yp.none}<h1 class="text-center mt-5">Ваш пост:</h1>
     <div class="d-flex justify-content-center">
-        <Card name={yp.name} color={yp.color1} color2={yp.color2} congrats={yp.congrats} date={yp.date}> </Card>
+        <Card name={yp.name} color={yp.color1} color2={yp.color2} congrats={yp.congrats} date={yp.date} unvisible={!yp.visible}> </Card>
     </div>
     <h1 class="text-center mt-3">А вот что написали остальные:</h1>
     {:else}

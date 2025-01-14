@@ -1,5 +1,5 @@
 <script>
-    export let name, color, color2, congrats, date
+    export let name, color, color2, congrats, date, unvisible
     if (!name) name = 'Имя неизвестного человека'
     if (!congrats) congrats = 'Пример для поздравления'
     if (!color) color = '#de831b'
@@ -50,7 +50,10 @@
                 <div class="overflow-scrolling">
                     {@html congrats.replaceAll('\n\n', '\n').replaceAll('\n', '<br>')}
                 </div>
-                <h6 class="text-dark-subtle opacity-50 mt-2 mx-2">{date.getDate()}.{date.getMonth() + 1}.{date.getFullYear()} {date.getHours()}:{date.getMinutes()}</h6>
+                <h6 class="text-dark-subtle opacity-50 mt-2 mx-2">{date.getDate().toString().padStart(2, '0')}.{(date.getMonth() + 1).toString().padStart(2, '0')}.{date.getFullYear()} {date.getHours().toString().padStart(2, '0')}:{date.getMinutes().toString().padStart(2, '0')}</h6>
+                {#if unvisible} 
+                <h5 class="text-danger">Ваше поздравление не прошло модерацию</h5>
+                {/if}
             </div>
         </div>
     </div>
