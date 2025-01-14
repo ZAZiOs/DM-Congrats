@@ -33,7 +33,6 @@
                     style="background-color: {color2}; padding: calc(1rem + calc(var(--bs-border-width)* 2));border-top-left-radius: 0;border-bottom-left-radius: 0;" 
                     bind:value={color2} placeholder="Шкала цвета" name="color2">
                 </div>
-                <sup class="text-secondary"><i>Данный цвет будет слева у карточки</i></sup>
             </div>
             {#if name.length <= 25 && congratulation.length <= 1024 && congratulation && name}
             <button type="submit" class="btn btn-outline-success mb-3">Отправить</button>
