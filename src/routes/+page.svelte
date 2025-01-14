@@ -1,10 +1,11 @@
 <script>
+    export let data
     import Card from "$lib/card.svelte";
     import AltCard from "$lib/alt-cards.svelte";
-    let congratulation = ''
-    let name = ''
-    let color = '#de831b'
-    let color2 = '#de381b'
+    let congratulation = data.props.old_post.congrats || ''
+    let name = data.props.old_post.name || ''
+    let color = data.props.old_post.color1 || '#de831b'
+    let color2 = data.props.old_post.name.color2 || '#de381b'
 </script>
 
 <div class="container text-center mt-5 d-flex flex-column">
@@ -27,10 +28,10 @@
                 <div class="progress" id="colorbar" style="height: auto">
                     <input type="color" class="form-control form-control-color w-100 progress-bar progress-bar-striped progress-bar-animated" 
                     style="background-color: {color}; padding: calc(1rem + calc(var(--bs-border-width)* 2));border-top-right-radius: 0;border-bottom-right-radius: 0;" 
-                    bind:value={color} placeholder="Шкала цвета" name="color">
+                    bind:value={color} placeholder="Шкала цвета" name="color1">
                     <input type="color" class="form-control form-control-color w-100 progress-bar progress-bar-striped progress-bar-animated" 
                     style="background-color: {color2}; padding: calc(1rem + calc(var(--bs-border-width)* 2));border-top-left-radius: 0;border-bottom-left-radius: 0;" 
-                    bind:value={color2} placeholder="Шкала цвета" name="color">
+                    bind:value={color2} placeholder="Шкала цвета" name="color2">
                 </div>
                 <sup class="text-secondary"><i>Данный цвет будет слева у карточки</i></sup>
             </div>

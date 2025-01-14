@@ -4,7 +4,8 @@ const congratsSchema = new mongoose.Schema({
 ip: String,
 name: String,
 congrats: String,
-color: String,
+color1: String,
+color2: String,
 date: Date
 })
 
