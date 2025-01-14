@@ -5,7 +5,7 @@
     let congratulation = data.props.old_post.congrats || ''
     let name = data.props.old_post.name || ''
     let color = data.props.old_post.color1 || '#de831b'
-    let color2 = data.props.old_post.name.color2 || '#de381b'
+    let color2 = data.props.old_post.color2 || '#de381b'
 </script>
 
 <div class="container text-center mt-5 d-flex flex-column">

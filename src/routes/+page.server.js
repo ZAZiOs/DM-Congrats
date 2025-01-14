@@ -30,6 +30,7 @@ export const actions = {
 export const load = async ({ getClientAddress }) => {
     let ip = getClientAddress()
     const old_post = await PostDB.findOne({ip}).lean()
+    if (!old_post) return { props: {old_post: {}}}
     old_post._id = String(old_post._id)
     return {
         props: { old_post }
